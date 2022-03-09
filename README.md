@@ -1,46 +1,58 @@
-# Location in Ngeria
+# Locations in Ngeria
+
+<div align="center">
+  <img width="436" heigth="398" src="https://res.cloudinary.com/lucignation/image/upload/v1646863641/samples/Screen_Shot_2022-03-09_at_11.06.44_PM_g7rvgn.png">
+</div>
 
 This package can easily be used with react project within form tag to get all locations in Nigeria.
 
-## Available Scripts
+## All the 36 States and FCT
 
 In the project directory, you can run:
 
-### `npm start`
+- Easy to add into existing project
+- Easy to style
+- Get selected location on one click
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##How to use
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Install by executing `npm install nigeria-locations` or `yarn add nigeria-locations`.
+- Import by adding `import States from 'nigeria-locations'`.
+- Use by adding `<States />`. Use `onSelect` prop for getting new values.
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Add nigeria-locations to your project by executing `npm install nigeria-locations` or `yarn add nigeria-locations`.
 
-### `npm run build`
+### Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Here's an example of basic usage:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```js
+import React, { useState } from 'react';
+import States from 'nigeria-locations';
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+function MyApp() {
+  const [state, setState] = useState('');
 
-### `npm run eject`
+  return (
+    <div>
+      <States onSelect={setState} currentState={state} />
+    </div>
+  );
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## User guide
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### nigeria-locations
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Displays a complete, interactive select tag.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Styling
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Prop name  | Description                                                          |
+| ---------- | -------------------------------------------------------------------- |
+| select-tag | Use this className to override the initial styling of the select tag |
+| option-tag | Use this className to override the initial styling of the tag tag    |
+|            |
