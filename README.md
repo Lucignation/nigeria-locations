@@ -1,6 +1,7 @@
 # Locations in Ngeria
 
 <div align="center">
+<img width="436" heigth="398" src="https://res.cloudinary.com/lucignation/image/upload/v1646863640/samples/Screen_Shot_2022-03-09_at_11.06.06_PM_cmshiy.png">
   <img width="436" heigth="398" src="https://res.cloudinary.com/lucignation/image/upload/v1646863641/samples/Screen_Shot_2022-03-09_at_11.06.44_PM_g7rvgn.png">
 </div>
 
@@ -14,7 +15,7 @@ In the project directory, you can run:
 - Easy to style
 - Get selected location on one click
 
-##How to use
+## How to use
 
 - Install by executing `npm install nigeria-locations` or `yarn add nigeria-locations`.
 - Import by adding `import States from 'nigeria-locations'`.
@@ -33,11 +34,13 @@ import React, { useState } from 'react';
 import States from 'nigeria-locations';
 
 function MyApp() {
-  const [state, setState] = useState('');
+  const onChange = (state) => {
+    console.log(state);
+  };
 
   return (
     <div>
-      <States onSelect={setState} currentState={state} />
+      <States onSelect={onChange} />
     </div>
   );
 }
@@ -51,8 +54,9 @@ Displays a complete, interactive select tag.
 
 #### Styling
 
-| Prop name  | Description                                                          |
-| ---------- | -------------------------------------------------------------------- |
-| select-tag | Use this className to override the initial styling of the select tag |
-| option-tag | Use this className to override the initial styling of the tag tag    |
-|            |
+| Prop name  | Description                                                                                                                                                                          |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| select-tag | Use this className to override the initial styling of the select tag                                                                                                                 |
+| option-tag | Use this className to override the initial styling of the tag tag                                                                                                                    |
+| onSelect   | Create a function and pass the function as a prop to <States /> tag                                                                                                                  |
+| params     | In the function created, pass a param in the function. Inside the function, you can get the value of the selected state, console the param in the function to see the selected state |

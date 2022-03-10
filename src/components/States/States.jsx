@@ -67,6 +67,7 @@ export const States = ({ currentState, onSelect }) => {
       name='state'
       defaultValue={currentState}
       onChange={(e) => onSelect(e.target.value)}
+      value={currentState}
       className='state-tag'
     >
       {stateOpt}
